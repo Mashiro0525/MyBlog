@@ -1,0 +1,73 @@
+# Decap CMS 配置
+# 作用：在网页上编辑 pkm_cards_v2/主题/子主题.md，保存即 commit 回 main，
+#       触发 GitHub Actions 重新生成博客并发布到 GitHub Pages。
+#
+# 使用前需完成两件事（详见交付说明）：
+#   1) 把下面的 repo 改为你实际的  GitHub 仓库（创建仓库后告诉我，我来填）
+#   2) 在 GitHub 创建一个 OAuth App，把它的 Client ID 填到 client_id 处
+#   3) OAuth App 的 Authorization callback URL 设为：
+#      https://<你的用户名>.github.io/<仓库名>/admin/
+
+backend:
+  name: github
+  repo: your-github-username/wucaiwan-pkm-blog   # TODO: 创建仓库后替换为实际 owner/repo
+  branch: main
+  auth: implicit
+  client_id: YOUR_OAUTH_APP_CLIENT_ID            # TODO: 替换为 GitHub OAuth App 的 Client ID
+  scope: repo                                   # 需要写权限以提交改动
+
+# 媒体文件存放（卡片目前为纯文本 md，基本用不到，保留以防图片上传）
+media_folder: "pkm_cards_v2/uploads"
+public_folder: "/pkm_cards_v2/uploads"
+
+# 6 个主题，各自一个 folder collection
+# 每个子主题 .md 文件作为一条 entry，编辑其完整 markdown 内容（保存后由 Actions 重新生成博客）
+collections:
+  - name: "blueprint"
+    label: "蓝图交互"
+    folder: "pkm_cards_v2/蓝图交互"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: body, label: "Markdown 内容", widget: "markdown" }
+
+  - name: "gis"
+    label: "GIS坐标"
+    folder: "pkm_cards_v2/GIS坐标"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: body, label: "Markdown 内容", widget: "markdown" }
+
+  - name: "cpp"
+    label: "Cpp工程"
+    folder: "pkm_cards_v2/Cpp工程"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: body, label: "Markdown 内容", widget: "markdown" }
+
+  - name: "airsim"
+    label: "AirSim无人机"
+    folder: "pkm_cards_v2/AirSim无人机"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: body, label: "Markdown 内容", widget: "markdown" }
+
+  - name: "echarts"
+    label: "Echarts媒体"
+    folder: "pkm_cards_v2/Echarts媒体"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: body, label: "Markdown 内容", widget: "markdown" }
+
+  - name: "config"
+    label: "项目配置"
+    folder: "pkm_cards_v2/项目配置"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: body, label: "Markdown 内容", widget: "markdown" }
+

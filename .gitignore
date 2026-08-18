@@ -1,0 +1,19 @@
+# ===== 非博客源文件，不纳入仓库 =====
+conversation*
+pkm_cards/
+__pycache__/
+*.pyc
+*.log
+pkm_blog_server.*
+pkm_blog_data.json
+upload_server.py
+extract_conversation.js
+extract_questions.py
+ima_build_kb.py
+ima_migrate.py
+ima_upload_v2.py
+pkm_analyze.py
+pkm_classify_v2.py
+
+# 博客是 Actions 生成的产物，不跟踪（本地双击用的 pkm_blog/ 仍在磁盘）
+pkm_blog/
