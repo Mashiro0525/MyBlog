@@ -7,7 +7,12 @@
   <title>五彩湾知识库 · 编辑后台</title>
 </head>
 <body>
-  <!-- Decap CMS 会自动加载同目录下的 config.yml -->
-  <script src="https://unpkg.com/decap-cms@^3.3.3/dist/decap-cms.js"></script>
+  <!--
+    编辑器：Sveltia CMS（Decap CMS 的活跃维护分支，github.com/sveltia-cms/sveltia-cms）
+    相比 Decap：内置 GitHub Device Flow，登录时只需在 github.com/login/device 输入一次性授权码，
+    无需任何 OAuth 代理，适合部署在 GitHub Pages / Cloudflare Pages 等纯静态环境。
+    配置同目录 config.yml（YAML 与 Decap 100% 兼容，只需去掉 auth/client_id）。
+  -->
+  <script src="https://unpkg.com/sveltia-cms@latest/dist/sveltia-cms.js"></script>
 </body>
 </html>

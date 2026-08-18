@@ -1,19 +1,21 @@
-# Decap CMS 配置
+# Sveltia CMS 配置
 # 作用：在网页上编辑 pkm_cards_v2/主题/子主题.md，保存即 commit 回 main，
 #       触发 GitHub Actions 重新生成博客并发布到 GitHub Pages。
 #
-# 使用前需完成一件事（详见交付说明）：
-#   1) 在 GitHub 创建一个 OAuth App，把它的 Client ID 填到 client_id 处
-#   2) OAuth App 的 Authorization callback URL 设为：
-#      https://Mashiro0525.github.io/MyBlog/admin/
+# 登录方式：Sveltia 内置 GitHub Device Flow
+#   1) 进入 https://Mashiro0525.github.io/MyBlog/admin/
+#   2) 点击「Log in with GitHub」
+#   3) 弹窗显示一段授权码（形如 ABCD-EFGH），复制后访问 https://github.com/login/device 粘贴
+#   4) 在 GitHub 页面授权本仓库的写权限，回来即登录成功
+#   5) 后续 7 天内免重复登录（token 存浏览器）
+#
+# 优点：完全无需 OAuth 代理、client_secret、任何后端服务。GitHub Pages 纯静态即可。
+# 要求：你登录的 GitHub 账号必须对 Mashiro0525/MyBlog 有写权限（owner 即可）。
 
 backend:
   name: github
   repo: Mashiro0525/MyBlog
   branch: main
-  auth: implicit
-  client_id: 0v23lidk6PHM3HSynOKe                # GitHub OAuth App Client ID（已填）
-  scope: repo                                   # 需要写权限以提交改动
 
 # 媒体文件存放（卡片目前为纯文本 md，基本用不到，保留以防图片上传）
 media_folder: "pkm_cards_v2/uploads"
