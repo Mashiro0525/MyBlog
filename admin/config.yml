@@ -12,7 +12,7 @@ backend:
   repo: Mashiro0525/MyBlog
   branch: main
   auth: implicit
-  client_id: YOUR_OAUTH_APP_CLIENT_ID            # TODO: 替换为 GitHub OAuth App 的 Client ID
+  client_id: 0v23lidk6PHM3HSynOKe                # GitHub OAuth App Client ID（已填）
   scope: repo                                   # 需要写权限以提交改动
 
 # 媒体文件存放（卡片目前为纯文本 md，基本用不到，保留以防图片上传）

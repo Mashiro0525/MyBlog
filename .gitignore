@@ -17,3 +17,6 @@ pkm_classify_v2.py
 
 # 博客是 Actions 生成的产物，不跟踪（本地双击用的 pkm_blog/ 仍在磁盘）
 pkm_blog/
+
+# 排除早期分类脚本生成的冗余三级卡片目录（build_blog.py 只用直接子主题 .md 文件）
+pkm_cards_v2/*/*/
